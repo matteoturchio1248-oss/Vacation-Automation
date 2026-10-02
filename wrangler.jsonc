@@ -2,16 +2,22 @@
   "name": "vacation-automation",
   "main": "./worker/index.ts",
   "compatibility_date": "2026-05-15",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
   "workers_dev": true,
   "assets": {
     "binding": "ASSETS",
-    "run_worker_first": ["/api/*"]
+    "run_worker_first": [
+      "/api/*"
+    ]
   },
-  "d1_databases": [{
-    "binding": "DB",
-    "database_name": "sfte-hcm-demo",
-    "database_id": "00000000-0000-4000-8000-000000000000",
-    "migrations_dir": "drizzle"
-  }]
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "sfte-hcm-demo",
+      "database_id": "10d2afc2-2a8c-415d-9139-6a21a26bcdd6",
+      "migrations_dir": "drizzle"
+    }
+  ]
 }
