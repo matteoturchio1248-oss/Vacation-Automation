@@ -1,0 +1,1 @@
+ALTER TABLE `personal_reminders` ADD `last_notified_at` text;

@@ -1,0 +1,9 @@
+# Local development only. Copy to ignored .dev.vars and set private values.
+# Cloudflare Vite loads this file as local Worker bindings.
+BOOTSTRAP_SECRET=
+JOBS_SECRET=
+APP_ORIGIN=
+GMAIL_RELAY_URL=
+GMAIL_RELAY_SECRET=
+RESEND_API_KEY=
+NOTIFICATION_FROM_EMAIL=

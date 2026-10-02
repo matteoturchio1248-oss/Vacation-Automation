@@ -1,0 +1,24 @@
+Configuration names — placeholders only, not an active environment file.
+
+DB: D1-compatible database binding in the current runtime.
+GMAIL_RELAY_URL: optional authorized Google Apps Script /exec endpoint.
+GMAIL_RELAY_SECRET: optional relay authentication secret; transfer privately.
+RESEND_API_KEY: optional sending credential when using Resend instead of Gmail.
+NOTIFICATION_FROM_EMAIL: optional verified sender address for Resend.
+
+These are read through lib/database.ts runtimeEnv() / Worker bindings.
+The Settings-based Gmail connection is stored in database settings named
+gmail_relay_url and gmail_relay_secret; values are excluded from this package.
+
+The company-server port should define its own BASE_URL and scheduled-job
+authentication configuration. Neither is a supported automatic binding in the
+unmodified source. Wire them into the new runtime explicitly.
+
+Do not send API keys, passwords, relay secrets, sessions or database exports by email.
+
+Standalone Cloudflare deployment additions:
+BOOTSTRAP_SECRET: required private code (32+ chars) for first-administrator setup.
+JOBS_SECRET: required independent private code (32+ chars) for job endpoint bearer auth.
+APP_ORIGIN: HTTPS origin for scheduled reminders, if a schedule is later configured.
+SFTE_D1_DATABASE_ID: non-secret build variable selecting the NEW standalone database.
+Never reuse the current hosted Site's database ID or service credential.
