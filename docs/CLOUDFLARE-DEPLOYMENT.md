@@ -2,8 +2,7 @@
 
 This is a tested standalone deployment source, not a confirmed live deployment.
 Target repository: https://github.com/matteoturchio1248-oss/Vacation-Automation
-The uploaded repository contents have not yet been verified from this session.
-Compare before replacing files; preserve any subsequent developer changes.
+The extracted source has been uploaded to `main` at the repository root and verified against the prepared source. GitHub CI passed for the source upload. Hosting still needs the database, runtime secrets and deployment steps below. Preserve subsequent developer changes.
 
 ## 1. Put the source files in the repository
 
