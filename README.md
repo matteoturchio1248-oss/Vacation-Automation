@@ -98,9 +98,9 @@ reminder schedule is enabled by the deployment configuration.
 ## Deploy the GitHub repository
 
 Follow [Cloudflare deployment](docs/CLOUDFLARE-DEPLOYMENT.md) to configure the
-new database, secrets, build and live link. This source is prepared for the
-repository `matteoturchio1248-oss/Vacation-Automation`, whose uploaded contents
-have not yet been verified.
+new database, secrets, build and live link. The extracted application source is available in
+`matteoturchio1248-oss/Vacation-Automation`. Hosting still requires a new D1
+database, runtime secrets and deployment setup.
 
 ## Put it on GitHub
 
