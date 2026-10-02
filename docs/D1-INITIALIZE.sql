@@ -1,11 +1,4 @@
--- SFTE HCM: initialize a fresh, empty D1 database only.
--- Target database ID: 10d2afc2-2a8c-415d-9139-6a21a26bcdd6
--- Check /tables in the D1 console before running.
--- Do not run this on a database with application tables or employee records.
--- No employee records, accounts or credentials are inserted.
-
-
--- 0000_slimy_mysterio.sql
+/* Initialize a fresh, empty SFTE HCM D1 database only. Database ID: 10d2afc2-2a8c-415d-9139-6a21a26bcdd6. No employee accounts or credentials are inserted. */
 CREATE TABLE `departments` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`name` text NOT NULL,
@@ -93,7 +86,6 @@ CREATE TABLE `vacation_requests` (
 );
 
 
--- 0001_red_sentinels.sql
 CREATE TABLE `vacation_accrual_profiles` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`user_id` integer NOT NULL,
@@ -130,14 +122,12 @@ ALTER TABLE `vacation_requests` ADD `last_reminder_at` text;
 
 ALTER TABLE `vacation_requests` ADD `reminder_count` integer DEFAULT 0 NOT NULL;
 
--- 0002_reflective_sasquatch.sql
 ALTER TABLE `notification_log` ADD `html_body` text;
 
 ALTER TABLE `notification_log` ADD `attempt_count` integer DEFAULT 0 NOT NULL;
 
 ALTER TABLE `notification_log` ADD `last_attempt_at` text;
 
--- 0003_faulty_major_mapleleaf.sql
 CREATE TABLE `personal_reminders` (
 	`id` integer PRIMARY KEY AUTOINCREMENT NOT NULL,
 	`owner_user_id` integer NOT NULL,
@@ -196,10 +186,8 @@ CREATE TABLE `workflow_tasks` (
 
 ALTER TABLE `users` ADD `work_schedule` text;
 
--- 0004_flashy_secret_warriors.sql
 ALTER TABLE `personal_reminders` ADD `last_notified_at` text;
 
--- 0005_serious_dreadnoughts.sql
 ALTER TABLE `users` ADD `hire_date` text;
 
 ALTER TABLE `users` ADD `termination_date` text;
@@ -208,7 +196,6 @@ ALTER TABLE `users` ADD `leave_start_date` text;
 
 ALTER TABLE `users` ADD `leave_end_date` text;
 
--- 0006_free_spiral.sql
 ALTER TABLE `users` ADD `job_title` text;
 
 ALTER TABLE `users` ADD `compensation_amount_cents` integer;
@@ -223,7 +210,6 @@ ALTER TABLE `users` ADD `employee_notes` text;
 
 ALTER TABLE `users` ADD `has_portal_access` integer DEFAULT true NOT NULL;
 
--- 0007_known_kulan_gath.sql
 ALTER TABLE `vacation_requests` ADD `employment_type_snapshot` text;
 
 ALTER TABLE `vacation_requests` ADD `hr_finalized` integer DEFAULT false NOT NULL;
@@ -236,7 +222,6 @@ ALTER TABLE `vacation_requests` ADD `payroll_saved_by` integer REFERENCES users(
 
 ALTER TABLE `vacation_requests` ADD `payroll_saved_at` text;
 
--- 0008_faulty_albert_cleary.sql
 CREATE TABLE `approval_maps` (
 	`id` text PRIMARY KEY NOT NULL,
 	`revision` integer NOT NULL,
